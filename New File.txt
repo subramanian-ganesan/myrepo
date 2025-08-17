@@ -1,6 +1,1 @@
-<<<<<<< HEAD
-
-changed
-=======
-new change
->>>>>>> 6b01d71d36c37e66843646ed6209f0618714b166
+nothing to change
