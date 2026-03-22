@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       source_path:
-        description: 'Source file path'
+        description: 'Source file path (relative to repo)'
         required: true
-        default: 'D:\\Learning\\Git-GitHub\\GitHub Actions\\Source\\file.txt'
+        default: 'Source/file.txt'
       destination_path:
-        description: 'Destination file path'
+        description: 'Destination file path (relative to repo)'
         required: true
-        default: 'D:\\Learning\\Git-GitHub\\GitHub Actions\\Destination\\file.txt'
+        default: 'Destination/file.txt'
 
 jobs:
   copy-file-job:
@@ -18,10 +18,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6.2.0
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
