@@ -3,7 +3,7 @@ name: Windows Python File Copy
 on:
 
   schedule:
-  - cron: '44 19 * * *'
+  - cron: '17 01 * * *'
   workflow_dispatch:
     inputs:
       source_path:
