@@ -1,0 +1,30 @@
+name: Windows Python File Copy
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_path:
+        description: 'Source file path'
+        required: true
+        default: 'D:\\Learning\\Git-GitHub\\GitHub Actions\\Source\\file.txt'
+      destination_path:
+        description: 'Destination file path'
+        required: true
+        default: 'D:\\Learning\\Git-GitHub\\GitHub Actions\\Destination\\file.txt'
+
+jobs:
+  copy-file-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v6.2.0
+        with:
+          python-version: '3.x'
+
+      - name: Run Python file copy script
+        run: |
+          python copy_file.py "${{ github.event.inputs.source_path }}" "${{ github.event.inputs.destination_path }}"
