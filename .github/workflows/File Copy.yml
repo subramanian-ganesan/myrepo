@@ -28,3 +28,9 @@ jobs:
       - name: Run Python file copy script
         run: |
           python copy_file.py "${{ github.event.inputs.source_path }}" "${{ github.event.inputs.destination_path }}"
+
+      - name: Upload copied file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: copied-file
+          path: Destination/file.txt
