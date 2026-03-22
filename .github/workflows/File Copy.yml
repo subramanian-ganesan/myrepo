@@ -1,6 +1,9 @@
 name: Windows Python File Copy
 
 on:
+
+  schedule:
+    - cron: '10 1 * * *'   # Runs daily at 1:00 AM UTC
   workflow_dispatch:
     inputs:
       source_path:
