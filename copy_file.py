@@ -7,6 +7,13 @@ def main():
         print("Usage: python copy_file.py <source> <destination>")
         sys.exit(1)
 
+src = sys.argv[1]
+dst = sys.argv[2]
+
+if os.path.abspath(src) == os.path.abspath(dst): print("Source and destination are the same file. Skipping copy.") sys.exit(1)
+
+shutil.copy2(src, dst)
+    
     source = os.path.join(os.getcwd(), sys.argv[1])
     destination = os.path.join(os.getcwd(), sys.argv[2])
 
