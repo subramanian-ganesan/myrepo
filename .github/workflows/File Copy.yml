@@ -2,8 +2,6 @@ name: Windows Python File Copy
 
 on:
 
-  schedule:
-  - cron: '23 14 * * *'
   workflow_dispatch:
     inputs:
       source_path:
